@@ -52,7 +52,7 @@ if __name__ == "__main__":
 
     print(time.time() - start)
     results = {"ess":h_ess, "l":all_l.tolist(), "noise_level": config.noise_covar[0], "sample_size":config.N_IS}
-    with open("test.json", "w") as f:
+    with open("resultats.json", "w") as f:
         json.dump(results, f)
 
     #sampled_cls = invgamma.rvs(a=(2 * 1024 - 1) / 2, scale=(2 * 1024 + 1) * (1e3/(1024**2)) / 2, size = 1000000)
