@@ -39,6 +39,7 @@ def main(list_l):
 
 
 if __name__ == "__main__":
+    """
     print(cls_[30])
     print(config.noise_covar[0])
     all_l = np.arange(0, 1024, 10)
@@ -54,7 +55,12 @@ if __name__ == "__main__":
     results = {"ess":h_ess, "l":all_l.tolist(), "noise_level": config.noise_covar[0], "sample_size":config.N_IS}
     with open("resultats.json", "w") as f:
         json.dump(results, f)
+   """
+    with open("resultats.json", "r") as f:
+       r =  json.load(f)
 
+    plt.plot(r["ess"])
+    plt.show()
     #sampled_cls = invgamma.rvs(a=(2 * 1024 - 1) / 2, scale=(2 * 1024 + 1) * (1e3/(1024**2)) / 2, size = 1000000)
     #plt.hist(sampled_cls, bins=1000, density=True)
     #plt.axvline(x=cls_[1024], color="green")
